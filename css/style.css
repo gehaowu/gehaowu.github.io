@@ -95,6 +95,10 @@ a:hover {
 	background: url(../images/comments.svg) center no-repeat;
 	background-size: 70%;
 }
+.edit {
+	background: url(../images/edit.svg) center no-repeat;
+	background-size: 70%;
+}
 .eyedropper {
 	background: url(../images/eyedropper.svg) center no-repeat;
 	background-size: 70%;
