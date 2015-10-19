@@ -1,65 +1,80 @@
 <!DOCTYPE HTML>
 <html lang="zh-Hans">
-<head>
-<meta http-equiv="refresh" content="30; url=https://www.gehaowu.com/">
-<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>站点没创建或已删除！</title>
-<style type="text/css">
-body {
-	background-color: #ececec;
-	color: #3c3c3c;
-	font-size: 14px;
-	font-family: Open Sans,sans-serif
-}
-.page p:first-child {
-	color: #fff;
-	text-align: center;
-	letter-spacing: 5px;
-	font-weight: 700;
-	font-size: 150px;
-	font-family: cursive;
-	line-height: 75pt
-}
-.page p:first-child span {
-	text-shadow: 0 0 2px #686868,0 1px 1px #ddd,0 2px 1px #d6d6d6,0 3px 1px #ccc,0 4px 1px #c5c5c5,0 5px 1px #c1c1c1,0 6px 1px #bbb,0 7px 1px #777,0 8px 3px hsla(0,0%,39%,.4),0 9px 5px hsla(0,0%,39%,.1),0 10px 7px hsla(0,0%,39%,.15),0 11px 9px hsla(0,0%,39%,.2),0 9pt 11px hsla(0,0%,39%,.25),0 13px 15px hsla(0,0%,39%,.3);
-	cursor: pointer
-}
-.page p:first-child span,.page p:first-child span:hover {
-	-webkit-transition: all .1s linear;
-	transition: all .1s linear
-}
-.page p:first-child span:hover {
-	text-shadow: 0 0 2px #686868,0 1px 1px #fff,0 2px 1px #fff,0 3px 1px #fff,0 4px 1px #fff,0 5px 1px #fff,0 6px 1px #fff,0 7px 1px #777,0 8px 3px #fff,0 9px 5px #fff,0 10px 7px #fff,0 11px 9px #fff,0 9pt 11px #fff,0 13px 15px #fff
-}
-.page p:not(:first-child) {
-	margin-top: -50px;
-	color: #666;
-	text-align: center;
-	text-shadow: 0 1px 0 #fff;
-	letter-spacing: 1px;
-	font-size: 20px;
-	font-family: cursive;
-	line-height: 2em
-}
-</style>
-<script type="text/javascript">
-function countDown(secs, surl) {
-	var jumpTo = document.getElementById('jumpTo');
-	jumpTo.innerHTML = secs;
-	if (--secs > 0) {
-		setTimeout("countDown(" + secs + ",'" + surl + "')", 1000);
-	} else {
-		location.href = surl;
-	}
-}
-</script>
-</head>
-<body>
-<div class="page">
-	<p><span>H</span><span>A</span><span>O</span><span>W</span><span>U</span><span>G</span><span>E</span></p>
-	<p>(´･ω･`)<br>您所访问的站点没创建或已删除！<br>系统将在<span id="jumpTo">5</span>秒后跳转到<br><a href="https://www.gehaowu.com/">HTTPS://WWW.GEHAOWU.COM/</a></p>
-</div>
-<script type="text/javascript">countDown(30,'https://www.gehaowu.com/');</script>
-</body>
+<!--
+	***       *    *     *    *     *    *    ******* *     * *     *     *****  *******
+	 *       * *   **   **    *     *   * *   *     * *  *  * *     *    *     * *
+	 *      *   *  * * * *    *     *  *   *  *     * *  *  * *     *    *       *
+	 *     *     * *  *  *    ******* *     * *     * *  *  * *     *    *  **** *****
+	 *     ******* *     *    *     * ******* *     * *  *  * *     *    *     * *       ***
+	 *     *     * *     *    *     * *     * *     * *  *  * *     *    *     * *       ***
+	***    *     * *     *    *     * *     * *******  ** **   *****      *****  ******* ***
+-->
+<!--
+	This is my personal home page
+	For more copyright information, see: https://www.gehaowu.com/Copyright/
+-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>Welcome to Ge Haowu&apos;s Personal Homepage!</title>
+		<meta name="author" content="Haowu Ge" />
+		<meta name="description" content="Welcome to Ge Haowu&apos;s Personal Homepage!" />
+		<meta name="keywords" content="芭比小柒,财务,葛豪武,个人主页,会计,小柒,Accounting,Finance,FreeBSD,Ge Haowu,Haowu Ge,HTML5,Homepage,XiaoQI,XiaoQI Ge" />
+		<meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<!--[if lte IE 8]><script src="js/ie/html5shiv.min.js"></script><![endif]-->
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/ie9.css" /><![endif]-->
+		<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+	</head>
+	<body class="loading" onload="_onload()">
+		<div class="preload">
+			<img src="images/bg.jpg">
+			<img src="images/overlay-pattern.png">
+			<img src="images/overlay.svg">
+			<img src="images/camera.svg">
+			<img src="images/user.svg">
+			<img src="images/wordpress.svg">
+		</div>
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+					<header id="header">
+						<h1>葛&nbsp;&nbsp;豪&nbsp;&nbsp;武</h1>
+					<p>Welcome to Ge Haowu&apos;s Personal Homepage!</p>
+					<p>Hey, it&apos;s my Life!</p>
+						<nav>
+							<ul>
+								<li><a href="heartbeat/" class="icons heartbeat"><span>Heartbeat</span></a></li>
+								<li><a href="aboutme/" class="icons user"><span>About Me</span></a></li>
+								<li><a href="labs/" class="icons wordpress"><span>My Labs</span></a></li>
+							</ul>
+						</nav>
+					</header>
+					<footer id="footer">
+					<p><span class="beian"><a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">浙ICP备15014697号-1</a></span></p>
+					<p><span class="copyright">Copyright &copy; 2011 - 2015 Haowu Ge. All rights reserved.</span></p>
+					</footer>
+			</div>
+		</div>
+		<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+		<script type="text/javascript">
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+			function _onload() {
+				document.body.className = '';
+				var _hmt = _hmt || [];
+				var hm = document.createElement("script");
+				hm.type = "text/javascript";
+				hm.src = "//hm.baidu.com/hm.js?2f0f4b0d867163a00886350ad2c21f8c";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+
+			}
+		</script>
+	</body>
 </html>

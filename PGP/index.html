@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<!--
+	***       *    *     *    *     *    *    ******* *     * *     *     *****  *******
+	 *       * *   **   **    *     *   * *   *     * *  *  * *     *    *     * *
+	 *      *   *  * * * *    *     *  *   *  *     * *  *  * *     *    *       *
+	 *     *     * *  *  *    ******* *     * *     * *  *  * *     *    *  **** *****
+	 *     ******* *     *    *     * ******* *     * *  *  * *     *    *     * *       ***
+	 *     *     * *     *    *     * *     * *     * *  *  * *     *    *     * *       ***
+	***    *     * *     *    *     * *     * *******  ** **   *****      *****  ******* ***
+-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>开源 PGP 方案：GnuPG 的基本操作</title>
+<style>
+body{padding-top:2.5em;background-color:#666;color:#333;font-size:84%;font-family:Microsoft JhengHei,Helvetica,Tahoma,Arial,STXihei,"华文细黑",Microsoft YaHei,SimSun,Heiti,sans-serif}.title{text-align:center}.title:after{width:180px;height:30px;content:" ";margin-left:-90px;border:1px solid hsla(0,0%,78%,.8);background:hsla(0,0%,100%,.6);box-shadow:0 0 3px rgba(0,0,0,.1);-webkit-transform:rotate(-5deg);transform:rotate(-5deg);position:absolute;left:50%;top:-15px}.page{width:600px;margin:0 auto;padding:1em 0 2em;background-color:#f4f39e;background:-moz-linear-gradient(top,#f4f39e,#f5da41 60%,#fe6);background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f4f39e),to(#fe6),color-stop(.6, #f5da41));box-shadow:0 2px 10px 1px rgba(0,0,0,.2);text-shadow:0 1px 0 #f6ef97;position:relative}.page:before{-webkit-transform:skew(-15deg) rotate(-5deg);transform:skew(-15deg) rotate(-5deg);left:15px}.page:after{-webkit-transform:skew(15deg) rotate(5deg);transform:skew(15deg) rotate(5deg);right:15px}.page:after,.page:before{width:90%;height:20%;content:' ';box-shadow:0 8px 1pc rgba(0,0,0,.3);position:absolute;bottom:22px;z-index:-1}.page p,.page title{line-height:2em;padding:0 2em}.cursor{-webkit-animation:blink .75s linear infinite;animation:blink .75s linear infinite}@-webkit-keyframes blink{0%,50%{opacity:1}50.01%,to{opacity:0}}@keyframes blink{0%,50%{opacity:1}50.01%,to{opacity:0}}</style>
+</head>
+<body>
+<div class="page">
+<h2 class="title">开源 PGP 方案：GnuPG 的基本操作</h2>
+<h4 class="title"><a href="../">首页</a> | <a href="../albums/">相册</a> | <a href="../notes/">笔记</a></h4>
+<p>
+Syntax: gpg [options] [files]<br>
+Sign, check, encrypt or decrypt<br>
+Default operation depends on the input data<br>
+指令：<br>
+ -s, --sign                 make a signature<br>
+     --clearsign            make a clear text signature<br>
+ -b, --detach-sign          生成一份分离的签名<br>
+ -e, --encrypt              加密数据<br>
+ -c, --symmetric            仅使用对称加密<br>
+ -d, --decrypt              解密数据(默认)<br>
+     --verify               验证签名<br>
+ -k, --list-keys            列出密钥<br>
+     --list-sigs            列出密钥和签名<br>
+     --check-sigs           列出并检查密钥签名<br>
+     --fingerprint          列出密钥和指纹<br>
+ -K, --list-secret-keys     列出私钥<br>
+     --gen-key              生成一副新的密钥对<br>
+     --quick-gen-key        quickly generate a new key pair<br>
+     --quick-adduid         quickly add a new user-id<br>
+     --full-gen-key         full featured key pair generation<br>
+     --gen-revoke           生成一份吊销证书<br>
+     --delete-keys          从公钥钥匙环里删除密钥<br>
+     --delete-secret-keys   从私钥钥匙环里删除密钥<br>
+     --quick-sign-key       quickly sign a key<br>
+     --quick-lsign-key      quickly sign a key locally<br>
+     --sign-key             为某把密钥添加签名<br>
+     --lsign-key            为某把密钥添加本地签名<br>
+     --edit-key             编辑某把密钥或为其添加签名<br>
+     --passwd               change a passphrase<br>
+     --export               导出密钥<br>
+     --send-keys            把密钥导出到某个公钥服务器上<br>
+     --recv-keys            从公钥服务器上导入密钥<br>
+     --search-keys          在公钥服务器上搜寻密钥<br>
+     --refresh-keys         从公钥服务器更新所有的本地密钥<br>
+     --import               导入/合并密钥<br>
+     --card-status          打印卡状态<br>
+     --card-edit            更改卡上的数据<br>
+     --change-pin           更改卡的 PIN<br>
+     --update-trustdb       更新信任度数据库<br>
+     --print-md             print message digests<br>
+     --server               run in server mode<br>
+选项：<br>
+ -a, --armor                输出经 ASCII 封装<br>
+ -r, --recipient USER-ID    encrypt for USER-ID<br>
+ -u, --local-user USER-ID   use USER-ID to sign or decrypt<br>
+ -z N                       set compress level to N (0 disables)<br>
+     --textmode             使用标准的文本模式<br>
+ -o, --output FILE          write output to FILE<br>
+ -v, --verbose              详细模式<br>
+ -n, --dry-run              不做任何改变<br>
+ -i, --interactive          覆盖前先询问<br>
+     --openpgp              行为严格遵循 OpenPGP 定义<br>
+(请参考在线说明以获得所有命令和选项的完整清单)<br>
+范例：<br>
+ -se -r Bob [文件名]          为 Bob 这个收件人签名及加密<br>
+ --clearsign [文件名]         做出明文签名<br>
+ --detach-sign [文件名]       做出分离式签名<br>
+ --list-keys [某甲]           显示密钥<br>
+ --fingerprint [某甲]         显示指纹</p>
+<h4 class="title"><span class="copyright">Copyright &copy; 2011 - 2015 Haowu Ge. All rights reserved.</span></h4>
+</div>
+</body>
+</html>
